@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>F1 tickets Sochi gp</title>
+    <link href="outlines.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Всем ет</title>
+    <meta name="keywords" content="Ф1,Билеты,Сочи,Гран-при">
 </head>
 <body>
-    <h1>Заголовок</h1>
-    <p>Это веб страница!!!!!</p>
+    <header>
+        <h1>Заголовок хэдера</h1>
+        <p>Здесь будут всякие ссылочки на другие мои страницы и логотипы</p>
+        <nav>о нас, билеты, ЛК, корзина</nav>
+    </header>
+    <main>
+        <h2>Заголовок мэйна</h2>
+        <section>
+            <h4>Небольшое описание</h4>
+            <p>На этом сайте будет интернет магазин - продажа билетов на российский этап формулы 1 в Сочи</p>
+            <p>Надеюсь сделать его красивее, чем официальный и опробовать в нём много нового</p>
+        </section>
+        <article>
+            Лирическое отступление автора о смысле бытия
+        </article>
+        <aside>
+            <h3>Оставшиеся гонки в сезоне:</h3>
+            <ul>
+                <li>Турция</li>
+                <li>Оститн, США</li>
+                <li>Мексика</li>
+                <li>Бразилия</li>
+                <li>Катар</li>
+                <li>Саудовская Аравия</li>
+                <li>Абу Даби</li>
+            </ul>
+        </aside>
+        <aside>
+            <pre>
+                ☆┌─┐　  ─┐☆
+                　│▒│ /▒/
+                　│▒│/▒/
+                　│▒/▒/─┬─┐
+                　│▒│▒|▒│▒│
+                ┌┴─┴─┐-┘─┘
+                │▒┌──┘▒▒▒│
+                └┐▒▒▒▒▒▒┌┘
+                　└┐▒▒▒▒┌┘
+            </pre>
+        </aside>
+    </main>
+    <footer>
+        <p>контактов, ещё нет, есть отличный код, который я у сбея нашёл в папочке с алгосами</p>
+        <pre><code>
+            void merge(Boost *a, long p, long q, long r)
+            {
+                long i, lk = 0, rk = 0;
+                long j = 0;
+                string L[100010], R[100010];
+                for (i = p; i <= q; i++)
+                {
+                    L[i - p].Country = a[i].Country;
+                    lk++;
+                    //cout << L[i-p] << " " << i-p<<"\n";
+                }
+                for (i = q + 1; i <= r; i++)
+                {
+                    R[i - q - 1].Country = a[i].Country;
+                    rk++;
+                }
+
+                i = 0;
+                for (int k = p; k <= r; k++)
+                {
+                    if ((L[i].Country <= R[j].Country or j > rk-1) and i < lk)
+                    {
+                        a[k] = L[i];
+                        i++;
+                    }
+                    else {
+                        a[k] = R[j];
+                        j++;
+                    }
+                }
+                cout<<"\n";
+            }
+        </code></pre>
+    </footer>
 </body>
 </html>
