@@ -8,7 +8,7 @@
 </head>
 <body class="tickets-seller">
     <header>
-        <div class="head">
+        <div>
             <img class="logo" alt="лого гп России 2022" src="/content/GPlogo.png">
             <h1>Первый хэдер</h1>
             <p>Здесь будут всякие ссылочки на другие мои страницы и логотипы</p>
@@ -86,39 +86,39 @@
                 <cite>Энцо Феррари</cite>
             </blockquote>
             <p>ещё создатель сайта когда изучал алгосы и вот часть его кода со второго сема</p>
-            <pre><code>
-            void merge(Boost *a, long p, long q, long r)
-            {
-                long i, lk = 0, rk = 0;
-                long j = 0;
-                string L[100010], R[100010];
-                for (i = p; i <= q; i++)
-                {
-                    L[i - p].Country = a[i].Country;
-                    lk++;
-                    //cout << L[i-p] << " " << i-p<<"\n";
-                }
-                for (i = q + 1; i <= r; i++)
-                {
-                    R[i - q - 1].Country = a[i].Country;
-                    rk++;
-                }
+            <pre id="code-insert"><code>
+void merge(Boost *a, long p, long q, long r)
+{
+    long i, lk = 0, rk = 0;
+    long j = 0;
+    string L[100010], R[100010];
+    for (i = p; i <= q; i++)
+    {
+        L[i - p].Country = a[i].Country;
+        lk++;
+        //cout << L[i-p] << " " << i-p<<"\n";
+    }
+    for (i = q + 1; i <= r; i++)
+    {
+        R[i - q - 1].Country = a[i].Country;
+        rk++;
+    }
 
-                i = 0;
-                for (int k = p; k <= r; k++)
-                {
-                    if ((L[i].Country <= R[j].Country or j > rk-1) and i < lk)
-                    {
-                        a[k] = L[i];
-                        i++;
-                    }
-                    else {
-                        a[k] = R[j];
-                        j++;
-                    }
-                }
-                cout<<"\n";
-            }
+    i = 0;
+    for (int k = p; k <= r; k++)
+    {
+        if ((L[i].Country <= R[j].Country or j > rk-1) and i < lk)
+        {
+            a[k] = L[i];
+            i++;
+        }
+        else {
+            a[k] = R[j];
+            j++;
+        }
+    }
+    cout<<"\n";
+}
         </code></pre>
         </div>
 
