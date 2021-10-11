@@ -15,6 +15,7 @@
     width: 1000px;
 }
 
+
 header {
     color: white;
     background-color: #E10600;
@@ -62,11 +63,9 @@ p {
     vertical-align: bottom;
     color: black;
     background-color: rgba(225, 6, 0, 0.14);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding: 5px 10px;
     margin-right: 20px;
+    white-space: pre-wrap;
     text-transform: capitalize;
 }
 
