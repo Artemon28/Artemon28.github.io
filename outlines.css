@@ -7,82 +7,20 @@
     src: url("content/F1Font.otf") format("opentype");
 }
 
-#code-insert {
-    border: 1px dotted;
-    background-color: #E1060023;
-    padding: 5px 20px;
-    font-weight: bold;
-    width: 1000px;
-}
-
-
-header {
-    color: white;
-    background-color: #E10600;
-    padding-left: 10px;
-    /*line-height: 1;*/
-}
-
 body {
     font-size: 17px;
     line-height: 23px;
     background: #fff;
 }
 
-.single-image {
-    height: 500px;
-    width: auto;
-    filter: drop-shadow(10px 5px 2px #611F1D);
-}
-
-footer {
-    margin-bottom: 0px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+header {
     color: white;
-    background-color: #15151e;
-}
-
-p {
-    font-family: Calibri;
-    size: 16px;
-    text-align: left;
-}
-
-.main-text {
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.ultimate-experemental-font {
-    size: 20px;
-    font-family: F1;
-    font-weight: 900;
-    line-height: 2;
-    text-align: left;
-    vertical-align: bottom;
-    color: black;
-    background-color: rgba(225, 6, 0, 0.14);
-    padding: 5px 10px;
-    margin-right: 20px;
-    white-space: pre-wrap;
-    text-transform: capitalize;
-}
-
-h3 {
-    size: 18px;
-    font-family: F1; /*я позаимствовал английский шрифт F1*/
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-    /*background-color: rgba(230, 74, 69, 0.36);*/
+    background-color: #E10600;
+    padding: 10px;
 }
 
 .logo{
-    /*display: inline-block;*/
     height: 30px;
-    margin-top: 10px;
-    margin-left: 10px;
 }
 
 .video-wrapper{
@@ -98,4 +36,57 @@ h3 {
     top:50%;
     transform:translate(0,-50%);
 
+}
+
+.main-text {
+    padding: 10px 30px;
+}
+
+h1 {  /*интересный факт, назначение h бесполезно, так как браузер сделает по своему*/
+    font-family: F1; /*я позаимствовал английский шрифт F1*/
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+}
+
+p {
+    font-family: Calibri;
+    font-size: 1em;
+    text-align: left;
+}
+
+.ultimate-experemental-font {
+    font-size: 1.1em;
+    font-family: F1;
+    font-weight: 900;
+    line-height: 2;
+    text-align: left;
+    vertical-align: bottom;
+    color: black;
+    background-color: rgba(225, 6, 0, 0.14);
+    padding: 0.5em 0.33em;
+    white-space: pre-wrap;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.single-image {
+    width: 50%;
+    filter: drop-shadow(10px 5px 2px #611F1D);
+}
+
+#code-insert {
+    border: 1px dotted;
+    background-color: #E1060023;
+    padding: 0.5em 0.66em;
+    font-weight: bold;
+    width: 50%;
+}
+
+footer {
+    font-size: 0.9em;
+    padding: 10px 30px;
+    color: white;
+    background-color: #15151e;
 }
