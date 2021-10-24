@@ -181,11 +181,54 @@ h1 {  /*интересный факт, назначение h бесполезн
 }
 
 .Racing-table{
+    margin: 1em;
+    display: grid;
     border-collapse: collapse;
-    /*убираем пустые промежутки между ячейками*/
     border: 1px solid grey;
-    /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+    overflow-y: auto;
+    grid-template-columns:
+    minmax(150px, 1fr)
+    minmax(150px, 1.67fr)
+    minmax(220px, 1.67fr)
+    minmax(220px, 1.67fr);
 }
+
+thead, tbody, tr {
+    display: contents;
+}
+
+th, td {
+    text-align: center;
+    padding: 0.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+th {
+    top: 0;
+    background: #E10600;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: white;
+}
+
+
+.resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0;
+    width: 3px;
+    cursor: col-resize;
+}
+
+tr:nth-child(even) td {
+    background: rgba(225, 6, 0, 0.03);
+}
+
 
 footer {
     font-size: 0.9em;
