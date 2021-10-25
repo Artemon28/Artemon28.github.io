@@ -121,7 +121,7 @@ main{
 }
 
 
-h1 {  /*интересный факт, назначение h бесполезно, так как браузер сделает по своему*/
+h1 {
     font-size: 2em;
     font-weight: bold;
     line-height: 1.2;
@@ -188,9 +188,9 @@ h1 {  /*интересный факт, назначение h бесполезн
     overflow-y: auto;
     grid-template-columns:
     minmax(150px, 1fr)
-    minmax(150px, 1.67fr)
-    minmax(220px, 1.67fr)
-    minmax(220px, 1.67fr);
+    minmax(150px, 2fr)
+    minmax(220px, 2fr)
+    minmax(220px, 2fr);
 }
 
 thead, tbody, tr {
@@ -214,19 +214,29 @@ th {
 }
 
 
-.resize-handle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: black;
-    opacity: 0;
-    width: 3px;
-    cursor: col-resize;
-}
-
 tr:nth-child(even) td {
     background: rgba(225, 6, 0, 0.03);
+}
+
+.photo-gallery{
+    padding: 1em;
+}
+
+.flex-gallery{
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 1em;
+    background-color: rgba(225, 6, 0, 0.03);
+}
+
+.flex-gallery-photo{
+    padding: 0.5em;
+    display: inline-block;
+    height: 100%;
+    max-height: 220px;
+    max-width: 100%;
 }
 
 
