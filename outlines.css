@@ -235,7 +235,8 @@ tr:nth-child(even) td {
     padding: 0.5em;
     display: inline-block;
     height: 100%;
-    max-height: 220px;
+    flex-basis: 250px;
+    width: 25%;
     max-width: 100%;
 }
 
