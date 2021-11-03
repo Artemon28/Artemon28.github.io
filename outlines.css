@@ -228,6 +228,7 @@ tr:nth-child(even) td {
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 1em;
+    max-height: 550px;
     background-color: rgba(225, 6, 0, 0.03);
 }
 
