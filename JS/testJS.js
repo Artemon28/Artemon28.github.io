@@ -7,8 +7,16 @@ window.onload = function dacha(){
     var loadingTime = new Date().getTime();
     loadingTime -= kkk;
     SpeedInfo.innerHTML += loadingTime + ' milliseconds'
+
+    locationObj = document.location;
+    var elem = document.getElementsByClassName("nav-href");
+    for (var i = 0; i< elem.length; i++) {
+        var lookLink = elem.item(i)
+        console.log(lookLink.href);
+        if (lookLink.href === locationObj.href) {
+            lookLink.classList.add("activeLink")
+            console.log("yes");
+        }
+    }
 }
 
-
-var l = document.getElementsByTagName('a');
-l[0].focus();
