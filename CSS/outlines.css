@@ -18,7 +18,8 @@ header {
     background-color: #E10600;
 }
 
-@media (min-width: 900px){
+
+@media (min-width: 930px){
     .flex-header{
         position: relative;
         display: flex;
@@ -36,22 +37,24 @@ header {
     }
 
     .nav-href {
-        line-height: 1.2;
+        line-height: 1.3em;
         position: relative;
         padding: 0 14px;
+        margin: 5px;
         text-transform: uppercase;
         text-decoration: none;
     }
 
-    .nav-href a:after {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 0px;
-        background: #34495e;
-        left: 0;
-        bottom: 0;
-        transition: all .8s ease;
+    .nav-href {
+        transition: 0.4s ease-in-out;
+    }
+    .nav-href, a:link, a:visited {
+        box-shadow: inset 0 -1px 0 #40382D;
+    }
+
+    .nav-href, a:focus, a:hover, a:active {
+        box-shadow: inset 0 -60px 0 #40382D, 2px 2px 3px rgba(0, 0, 0, 0.3);
+        color: #DECDA5;
     }
 
     .flex-navigation {
@@ -64,7 +67,7 @@ header {
     }
 }
 
-@media (max-width: 900px){
+@media (max-width: 930px){
     .flex-header{
         display: none;
     }
@@ -247,4 +250,8 @@ footer {
     padding: 10px 30px;
     color: white;
     background-color: #15151e;
+}
+
+#SpeedTest{
+
 }
