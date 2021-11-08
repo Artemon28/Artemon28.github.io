@@ -18,7 +18,6 @@ window.onload = function speedTimeandLocation(){
     var elem = document.getElementsByClassName("nav-href");
     for (var i = 0; i< elem.length; i++) {
         var lookLink = elem.item(i)
-            // || (lookLink.href === locationObj.href + "index.html")
         if (lookLink.href === locationObj.href) {
             lookLink.classList.add("activeLink")
         }
