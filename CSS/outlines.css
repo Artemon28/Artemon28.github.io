@@ -105,7 +105,6 @@ header {
 
 
 main{
-
 }
 
 *, :before, :after {
@@ -249,8 +248,21 @@ tr:nth-child(even) td {
     max-width: 100%;
 }
 
+#wrap {
+    flex: 1 0 auto;
+}
+
+html, body{
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
 
 footer {
+    flex-shrink: 0;
     font-size: 0.9em;
     padding: 10px 30px;
     color: white;
