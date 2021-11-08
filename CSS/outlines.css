@@ -248,6 +248,17 @@ tr:nth-child(even) td {
     max-width: 100%;
 }
 
+.ticket{
+    margin: 1em;
+    padding: 0.5em;
+    display: inline-block;
+    flex-basis: 250px;
+    width: 25%;
+    max-width: 100%;
+    border-style: solid;
+    border-width: 2px;
+}
+
 #wrap {
     flex: 1 0 auto;
 }
