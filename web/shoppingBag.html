@@ -4,7 +4,9 @@
 <head>
     <title>Shopping bag</title>
     <link href="../CSS/outlines.css" rel="stylesheet">
+    <link href="../CSS/TaskManager.css" rel="stylesheet">
     <script src="../JS/testJS.js"></script>
+    <script src="../JS/ToDoForm.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../content/F1-logo.ico" />
     <meta charset="UTF-8">
     <meta name="keywords" content="Ф1,Билеты,Сочи,Гран-при">
@@ -29,7 +31,37 @@
             </div>
         </header>
         <main>
-            <p>Здесь записи о набранных билетах</p>
+
+            <div class="TaskManager">
+                <form onsubmit="newElement(1);return false" id="TaskHeadid" class="TaskHead">
+                    <h2>Мой список дел</h2>
+                    <input type="text" id="myInput" placeholder="Новая задача">
+                </form>
+
+                <div class="TaskLines">
+                    <ul id="myUL">
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </main>
     </div>
     <footer>
