@@ -81,6 +81,7 @@ function oldTasks() {
 }
 window.onload = oldTasks
 var close = document.getElementsByClassName("close");
+var dels = document.getElementsByClassName("del");
 
 function newElement(temp) {
     var inputValue = document.getElementById("myInput").value;
@@ -100,13 +101,25 @@ function newLine(value, key) {
     document.getElementById("myUL").appendChild(li);
     document.getElementById("myInput").value = "";
 
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("|X|");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
+    var imgDone = document.createElement("img");
+    imgDone.src = "../content/checkeredFlag3.png"
+    imgDone.className = "close"
+    li.appendChild(imgDone);
+
+    var imgDel = document.createElement("div");
+    var circle = document.createElement("img");
+    var cross = document.createElement("img");
+    circle.src = "../content/circle.png"
+    cross.src = "../content/crosss.png"
+    imgDel.appendChild(circle);
+    imgDel.appendChild(cross);
+    circle.className = "circle"
+    cross.className = "cross"
+    imgDel.className = "del"
+    li.appendChild(imgDel);
+
     if (key[key.length - 1] === 'd')
-        li.style.textDecoration = "line-through";
+        li.classList.add("done");
 
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function() {
@@ -116,16 +129,30 @@ function newLine(value, key) {
             for (let i = 0; i < keys.length; i++) {
                 let key = keys[i];
                 if (localStorage.getItem(key) === line.childNodes[0].data) {
-                    // if (key.length <= 1) {
                     if (key[key.length - 1] !== "d") {
-                        line.style.textDecoration = "line-through";
+                        line.classList.add("done");
                         localStorage.removeItem(key);
                         localStorage.setItem(key + "d", line.childNodes[0].data);
                     } else {
-                        line.style.textDecoration = "none";
+                        line.classList.remove("done");
                         localStorage.removeItem(key);
                         localStorage.setItem(getNumber(key), line.childNodes[0].data);
                     }
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < dels.length; i++) {
+        dels[i].onclick = function() {
+            let line = this.parentElement;
+            let keys = Object.keys(localStorage);
+            keys.sort();
+            for (let i = 0; i < keys.length; i++) {
+                let key = keys[i];
+                if (localStorage.getItem(key) === line.childNodes[0].data) {
+                    localStorage.removeItem(key);
+                    line.style.display = "none"
                 }
             }
         }
