@@ -32,31 +32,16 @@ function newElement() {
 }
 
 function newLine(value, key) {
-    var li = document.createElement("li");
-    li.className = "taskLine"
-    li.appendChild(document.createElement("p").appendChild(document.createTextNode(value)));
-    document.getElementById("myUL").appendChild(li);
-    document.getElementById("myInput").value = "";
 
-    var imgDone = document.createElement("img");
-    imgDone.src = "../content/checkeredFlag3.png"
-    imgDone.className = "close"
-    li.appendChild(imgDone);
-
-    var imgDel = document.createElement("div");
-    var circle = document.createElement("img");
-    var cross = document.createElement("img");
-    circle.src = "../content/circle.png"
-    cross.src = "../content/crosss.png"
-    imgDel.appendChild(circle);
-    imgDel.appendChild(cross);
-    circle.className = "circle"
-    cross.className = "cross"
-    imgDel.className = "del"
-    li.appendChild(imgDel);
-
+    document.getElementById('myInput').value='';
+    var ul = document.getElementById("myUL");
+    var qqq = document.getElementById("line");
+    var qq = qqq.content.cloneNode(true);
+    console.log(qq.childNodes[1].childNodes[1]);
+    qq.childNodes[1].childNodes[0].data = value;
     if (key[key.length - 1] === 'd')
-        li.classList.add("done");
+        qq.childNodes[1].classList.add("done");
+    ul.appendChild(qq);
 
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function() {
