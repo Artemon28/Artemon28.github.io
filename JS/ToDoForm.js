@@ -1,63 +1,3 @@
-// // function docReady(fn) {
-// //     // see if DOM is already available
-// //     if (document.readyState === "complete" || document.readyState === "interactive") {
-// //         // call on next available tick
-// //         setTimeout(fn, 1);
-// //     } else {
-// //         document.addEventListener("DOMContentLoaded", fn);
-// //     }
-// // }
-//
-// function addLine() {
-//
-//     let input = document.createElement('input');
-//     input.id = "lastLine"
-//     lastLine.id = "oldLine"
-//     input.placeholder = "Новая задача"
-//     lastLine.after(input)
-// }
-//
-// function makeForm() {
-//     let input1 = document.createElement('input');
-//     input1.placeholder = "Новая задача"
-//
-//     let div = document.createElement('div');
-//     div.className = "alert";
-//     div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
-//
-//
-//     var form = document.getElementsByClassName("new-lines")[0];
-//     form.append(input1);
-//
-//     input1.onsubmit = makeForm;
-//     input1.on
-//     // input1.onclick = makeForm;
-// }
-//
-// function loadedFunctions(){
-//     let lastLine = document.getElementById("lastLine");
-//     lastLine.onsubmit = addLine;
-// }
-//
-// // docReady(loadedFunctions);
-//
-// window.onload = loadedFunctions
-//
-//
-//
-// const promise1 = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve('foo');
-//     }, 300);
-// });
-//
-// promise1.then((value) => {
-//     console.log(value);
-//     // expected output: "foo"
-// });
-//
-// console.log(promise1);
-
 function getNumber(string) {
     if (string[string.length - 1] === 'd')
         return string.slice(0, -1);
@@ -79,19 +19,16 @@ function oldTasks() {
         count = getNumber(key)
     }
 }
-window.onload = oldTasks
+
+document.addEventListener('DOMContentLoaded', oldTasks, false);
 var close = document.getElementsByClassName("close");
 var dels = document.getElementsByClassName("del");
 
-function newElement(temp) {
+function newElement() {
     var inputValue = document.getElementById("myInput").value;
-    if (inputValue === '') {
-        alert("Вы должны что-то написать!");
-    } else {
-        count++;
-        localStorage.setItem(count, inputValue);
-        newLine(inputValue, count);
-    }
+    count++;
+    localStorage.setItem(count, inputValue);
+    newLine(inputValue, count);
 }
 
 function newLine(value, key) {
@@ -152,9 +89,10 @@ function newLine(value, key) {
                 let key = keys[i];
                 if (localStorage.getItem(key) === line.childNodes[0].data) {
                     localStorage.removeItem(key);
-                    line.style.display = "none"
+                    line.remove();
                 }
             }
         }
     }
+
 }

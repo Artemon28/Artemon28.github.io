@@ -33,10 +33,10 @@
         <main>
 
             <div class="TaskManager">
-                <form onsubmit="newElement(1);return false" id="TaskHeadid" class="TaskHead">
-                    <input type="text" id="myInput" placeholder="Новая задача">
-                </form>
 
+                <form onsubmit="newElement(1);return false" id="TaskHeadid" class="TaskHead">
+                    <input type="text" id="myInput" placeholder="Новая задача" autocomplete="off" required>
+                </form>
                 <div class="TaskLines">
                     <ul id="myUL">
                     </ul>

@@ -90,3 +90,7 @@ img.circle {
     border-radius: 15px;
     padding: 0.5em;
 }
+
+.hide {
+    display: none;
+}
