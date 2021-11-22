@@ -35,13 +35,13 @@ function newLine(value, key) {
 
     document.getElementById('myInput').value='';
     var ul = document.getElementById("myUL");
-    var qqq = document.getElementById("line");
-    var qq = qqq.content.cloneNode(true);
-    console.log(qq.childNodes[1].childNodes[1]);
-    qq.childNodes[1].childNodes[0].data = value;
+    var templ = document.getElementById("line");
+    var clone = templ.content.cloneNode(true);
+    console.log(clone.childNodes[1].childNodes[1]);
+    clone.childNodes[1].childNodes[0].data = value;
     if (key[key.length - 1] === 'd')
-        qq.childNodes[1].classList.add("done");
-    ul.appendChild(qq);
+        clone.childNodes[1].classList.add("done");
+    ul.appendChild(clone);
 
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function() {
