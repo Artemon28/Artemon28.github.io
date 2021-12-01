@@ -1,0 +1,26 @@
+#log{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+#gif{
+    height: 100px;
+    text-align: center;
+}
+
+.userCardDiv{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+h4{
+    margin: 5px;
+}
+
+p{
+    margin: 5px;
+    margin-left: 10px;
+}

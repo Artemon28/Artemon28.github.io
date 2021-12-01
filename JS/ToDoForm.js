@@ -37,7 +37,6 @@ function newLine(value, key) {
     var ul = document.getElementById("myUL");
     var templ = document.getElementById("line");
     var clone = templ.content.cloneNode(true);
-    console.log(clone.childNodes[1].childNodes[1]);
     clone.childNodes[1].childNodes[0].data = value;
     if (key[key.length - 1] === 'd')
         clone.childNodes[1].classList.add("done");
