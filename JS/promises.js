@@ -18,8 +18,6 @@ function randomize(data){
     return data[randInt];
 }
 
-localStorage.clear()
-
 function serialize(data){
     let userinfo = [];
     userinfo[0] = data['username'];
@@ -33,39 +31,45 @@ function serialize(data){
 }
 
 function testPromise() {
-    let testPromisee = document.getElementById("log");
+    let promise_block = document.getElementById("log");
     let gifLoad = document.createElement("img");
     gifLoad.id = "gif";
     gifLoad.src = "../content/loadGIF3.gif";
-    testPromisee.appendChild(gifLoad);
+    promise_block.appendChild(gifLoad);
     let p1 = new Promise(async (resolve, reject) => {
         let url = `https://jsonplaceholder.typicode.com/users`;
-        let response = await fetch(url);
+        let response
+        try{
+            response = await fetch(url);
+        } catch (e) {
+            reject(new Error("network error"));
+        }
+
         if (response.ok) {
             let commits = await response.json();
             commits = randomize(commits);
             let userData = serialize(commits);
             resolve(userData);
-        } else {
-            reject(new Error("too long waiting"));
         }
-
+        reject(new Error("network error"));
     });
     p1.then(function(val) {
         let child = document.getElementById("gif");
-        testPromisee.removeChild(child);
+        promise_block.removeChild(child);
         let card = document.getElementById("userCard");
         var clone = card.content.cloneNode(true);
         for (i = 1; i <= val.length; i++){
             clone.childNodes[1].childNodes[i * 4 - 1].textContent = val[i - 1];
         }
-        testPromisee.appendChild(clone);
+        promise_block.appendChild(clone);
     }).catch((reason) => {
         let child = document.getElementById("gif");
-        testPromisee.removeChild(child);
-        let errormessage = document.createElement("p");
-        errormessage.textContent = `Something like this: (${reason}) went wrong`;
-        testPromisee.appendChild(errormessage);
+        promise_block.removeChild(child);
+
+        let error_card = document.getElementById("errorMessage");
+        var error_clone = error_card.content.cloneNode(true);
+        error_clone.childNodes[1].childNodes[0].textContent = `Something like this: (${reason}) went wrong`;
+        promise_block.appendChild(error_clone);
     });
 }
 
